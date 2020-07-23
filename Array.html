@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array</title>
+</head>
+<body>
+    
+    <script>
+        // let fruit = new Array()
+        let fruit = ['apple','banana','orange']
+        console.log(fruit);
+        fruit[1] = 'watermelon'
+        console.log(fruit[1]);
+
+        //unshift, shift, push, pop
+        fruit.unshift('berry')
+        console.log('unshift: ' + fruit);
+        fruit.shift()
+        console.log('shift: ' + fruit);
+        fruit.push('berry')
+        console.log('push: ' + fruit);
+        fruit.pop()
+        console.log('pop: ' + fruit);
+        //splice
+        fruit.splice(1,0,'berry')
+        console.log('splice add: ' + fruit);
+        fruit.splice(1,2)
+        console.log('splice delete: ' + fruit);
+
+        //array in loop
+        let scores = [82,75,49.9,64,36]
+        let passedCount = 0;
+        for(let i = 0; i < scores.length; i++){
+            if(scores[i] >= 50){
+                passedCount++
+            }
+        }
+        console.log('(for)passedCount : ' + passedCount);
+        
+
+        passedCount = 0;
+        scores.forEach((score,index) => {
+            if(score >= 50){
+                passedCount++
+            }
+        })
+        console.log('(forEach)passedCount : ' + passedCount);
+
+        //map
+        let grade = scores.map((score) => {
+            if(score >= 50){
+                return 'passed'
+            }
+            return 'failed'
+        })
+        console.log(scores,grade);
+
+        //filter
+        let passedScores = scores.filter((score) => {
+            return score >= 50
+        })
+        let failedScores = scores.filter((score) => {
+            return score <= 50
+        })
+        console.log(scores,passedScores,failedScores);
+
+        //reduce
+        let  sumScore = scores.reduce((sum, score) => {
+            return sum + score
+        })
+        console.log(scores,sumScore);
+
+
+        //find หาเจอ 1 ตัวแล้วจะหยุดการทำงาน
+        let numbers = [82,75,48,64,36]
+        let findNumber = numbers.find((number) => {
+            return number < 50
+        })
+        console.log(numbers,findNumber);
+
+        //findIndex หาเจอ 1 ตัวแล้วจะหยุดการทำงาน
+        let findIndex = numbers.findIndex((number) => {
+            return number < 50
+        })
+        console.log(numbers,findIndex);
+
+        //every ตรวจสอบว่าทุกข้อมูลผ่านเงื่อนไขที่กำหนดหรือไม่ ถ้าผ่านจะรีเทิร์น true
+        let everyonePassed = numbers.every((score) => {
+            return score >= 50
+        })
+        console.log(numbers,everyonePassed);
+
+        //some ตรวจสอบว่ามีอย่างน้อย 1 ตัวตรงตามเงื่อนไขหรือไม่ ถ้ามีจะรีเทิร์น true
+        let somePassed = numbers.some((score) => {
+            return score >= 50
+        })
+        console.log(numbers,somePassed);
+    </script>
+</body>
+</html>
