@@ -1,8 +1,14 @@
 # javaScript_basic
 js สร้างขึ้นมาเพื่อทำให้เว็บเพจมีการตอบสนองต่อผู้ใช้ เช่น click hover change
 
+
 Case sensitive 
     - var  Aa != var aa
+
+Data type
+    var เป็น global scope ไม่แนะนำให้ใช้
+    let เป็น block scope เปลี่ยนค่าได้ในภายหลัง
+    const เป็น block scope เก็บค่าคงที่ เปลี่ยนค่าในภายหลังไม่ได้
 
 Array
     - var cars = new Array()
